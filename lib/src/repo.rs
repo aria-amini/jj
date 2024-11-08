@@ -399,7 +399,7 @@ pub type SubmoduleStoreInitializer<'a> =
     dyn Fn(&UserSettings, &Path) -> Result<Box<dyn SubmoduleStore>, BackendInitError> + 'a;
 
 type BackendFactory =
-    Box<dyn Fn(&UserSettings, &Path) -> Result<Box<dyn Backend>, BackendLoadError>>;
+    Box<dyn Fn(&UserSettings, &Path, Option<&Path>) -> Result<Box<dyn Backend>, BackendLoadError>>;
 type OpStoreFactory = Box<
     dyn Fn(&UserSettings, &Path, RootOperationData) -> Result<Box<dyn OpStore>, BackendLoadError>,
 >;
@@ -429,6 +429,68 @@ pub struct StoreFactories {
     op_heads_store_factories: HashMap<String, OpHeadsStoreFactory>,
     index_store_factories: HashMap<String, IndexStoreFactory>,
     submodule_store_factories: HashMap<String, SubmoduleStoreFactory>,
+}
+
+impl Default for StoreFactories {
+    fn default() -> Self {
+        let mut factories = Self::empty();
+
+        // Backends
+        factories.add_backend(
+            SimpleBackend::name(),
+            Box::new(|_settings, store_path, _workspace_root| {
+                Ok(Box::new(SimpleBackend::load(store_path)))
+            }),
+        );
+        #[cfg(feature = "git")]
+        factories.add_backend(
+            crate::git_backend::GitBackend::name(),
+            Box::new(|settings, store_path, workspace_root| {
+                Ok(Box::new(crate::git_backend::GitBackend::load_at_workspace(
+                    settings,
+                    store_path,
+                    workspace_root,
+                )?))
+            }),
+        );
+        #[cfg(feature = "testing")]
+        factories.add_backend(
+            crate::secret_backend::SecretBackend::name(),
+            Box::new(|settings, store_path, _workspace_root| {
+                Ok(Box::new(crate::secret_backend::SecretBackend::load(
+                    settings, store_path,
+                )?))
+            }),
+        );
+
+        // OpStores
+        factories.add_op_store(
+            SimpleOpStore::name(),
+            Box::new(|_settings, store_path, root_data| {
+                Ok(Box::new(SimpleOpStore::load(store_path, root_data)))
+            }),
+        );
+
+        // OpHeadsStores
+        factories.add_op_heads_store(
+            SimpleOpHeadsStore::name(),
+            Box::new(|_settings, store_path| Ok(Box::new(SimpleOpHeadsStore::load(store_path)))),
+        );
+
+        // Index
+        factories.add_index_store(
+            DefaultIndexStore::name(),
+            Box::new(|_settings, store_path| Ok(Box::new(DefaultIndexStore::load(store_path)))),
+        );
+
+        // SubmoduleStores
+        factories.add_submodule_store(
+            DefaultSubmoduleStore::name(),
+            Box::new(|_settings, store_path| Ok(Box::new(DefaultSubmoduleStore::load(store_path)))),
+        );
+
+        factories
+    }
 }
 
 #[derive(Debug, Error)]
@@ -487,6 +549,7 @@ impl StoreFactories {
         &self,
         settings: &UserSettings,
         store_path: &Path,
+        workspace_root: Option<&Path>,
     ) -> Result<Box<dyn Backend>, StoreLoadError> {
         let backend_type = read_store_type("commit", store_path.join("type"))?;
         let backend_factory = self.backend_factories.get(&backend_type).ok_or_else(|| {
@@ -495,7 +558,7 @@ impl StoreFactories {
                 store_type: backend_type.clone(),
             }
         })?;
-        Ok(backend_factory(settings, store_path)?)
+        Ok(backend_factory(settings, store_path, workspace_root)?)
     }
 
     pub fn add_op_store(&mut self, name: &str, factory: OpStoreFactory) {
@@ -642,15 +705,20 @@ impl RepoLoader {
     /// Creates a `RepoLoader` for the repo at `repo_path` by reading the
     /// various `.jj/repo/<backend>/type` files and loading the right
     /// backends from `store_factories`.
+    ///
+    /// If `workspace_root` is provided, backends that support colocation (like
+    /// GitBackend) can detect whether the workspace is colocated and configure
+    /// themselves appropriately.
     pub fn init_from_file_system(
         settings: &UserSettings,
         repo_path: &Path,
         store_factories: &StoreFactories,
+        workspace_root: Option<&Path>,
     ) -> Result<Self, StoreLoadError> {
         let merge_options =
             MergeOptions::from_settings(settings).map_err(|err| BackendLoadError(err.into()))?;
         let store = Store::new(
-            store_factories.load_backend(settings, &repo_path.join("store"))?,
+            store_factories.load_backend(settings, &repo_path.join("store"), workspace_root)?,
             Signer::from_settings(settings)?,
             merge_options,
         );
