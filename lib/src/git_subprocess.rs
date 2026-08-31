@@ -575,6 +575,7 @@ fn parse_ref_pushes(stdout: &[u8]) -> Result<GitPushStats, GitSubprocessError> {
         .lines()
         .skip(1)
         .take_while(|line| line != b"Done")
+        .filter(|line| line.contains(&b'\t'))
         .enumerate()
     {
         tracing::debug!("response #{idx}: {}", line.to_str_lossy());
@@ -1218,6 +1219,19 @@ Done";
             ]
         );
         assert!(parse_ref_pushes(SAMPLE_OK_STDERR).is_err());
+    }
+
+    #[test]
+    fn test_parse_ref_pushes_ignores_remote_message_continuations() {
+        let output = b"To origin\n\
+!\tdeadbeef:refs/heads/bookmark\t[remote rejected] (VS403654: push rejected\n\
+See https://example.invalid/secret-scan\n\
+\n\
+Done";
+
+        let stats = parse_ref_pushes(output).unwrap();
+
+        assert_eq!(stats.remote_rejected, [("refs/heads/bookmark".into(), None)]);
     }
 
     #[test]
