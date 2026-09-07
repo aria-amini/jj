@@ -146,8 +146,7 @@ pub async fn cmd_workspace_add(
     #[cfg(feature = "git")]
     let worktree_guard = {
         // Check if parent workspace is colocated
-        let parent_is_colocated =
-            is_colocated_git_workspace(old_workspace_command.workspace(), repo.as_ref());
+        let parent_is_colocated = is_colocated_git_workspace(old_workspace_command.workspace());
 
         // Determine if colocation is requested:
         // - --no-colocate: never colocate (overrides everything)

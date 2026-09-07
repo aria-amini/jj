@@ -106,6 +106,7 @@ use crate::rewrite::rebase_commit_with_options;
 use crate::settings::UserSettings;
 use crate::signing::SignInitError;
 use crate::signing::Signer;
+use crate::simple_backend::SimpleBackend;
 use crate::simple_op_heads_store::SimpleOpHeadsStore;
 use crate::simple_op_store::SimpleOpStore;
 use crate::store::Store;
@@ -2002,13 +2003,12 @@ impl MutableRepo {
 
     /// Returns the per-workspace Git HEAD target for the given workspace.
     pub fn get_workspace_git_head(&self, name: &WorkspaceName) -> RefTarget {
-        self.view
-            .with_ref(|v| v.get_workspace_git_head(name).clone())
+        self.view.get_workspace_git_head(name).clone()
     }
 
     /// Sets the per-workspace Git HEAD target.
     pub fn set_workspace_git_head(&mut self, name: &WorkspaceName, target: RefTarget) {
-        self.view_mut().set_workspace_git_head(name, target);
+        self.view.set_workspace_git_head(name, target);
     }
 
     pub fn set_view(&mut self, data: op_store::View) {
@@ -2116,7 +2116,7 @@ impl MutableRepo {
         for (name, (base_target, other_target)) in changed_workspace_git_heads {
             let self_target = self.get_workspace_git_head(name);
             let new_target =
-                merge_ref_targets(self.index(), &self_target, base_target, other_target)?;
+                merge_ref_targets(self.index(), &self_target, base_target, other_target).await?;
             self.set_workspace_git_head(name, new_target);
         }
 
