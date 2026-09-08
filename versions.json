@@ -7,6 +7,11 @@
   {
     "version": "v0.46.0-main.20260908.1",
     "title": "v0.46.0-main.20260908.1",
+    "aliases": []
+  },
+  {
+    "version": "v0.46.0-adopt.20260908.1",
+    "title": "v0.46.0-adopt.20260908.1",
     "aliases": [
       "latest"
     ]
