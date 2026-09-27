@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://docs.jj-vcs.dev/latest/technical/revset-evaluation/">
+        <link rel="canonical" href="https://docs.jj-vcs.dev/latest/conflicts/">
       
       
-        <link rel="prev" href="../conflicts/">
+        <link rel="prev" href="../bookmarks/">
       
       
-        <link rel="next" href="../../contributing/">
+        <link rel="next" href="../operation-log/">
       
       
-      <link rel="icon" href="../../images/favicon-96x96.png">
+      <link rel="icon" href="../images/favicon-96x96.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>Revset evaluation - Jujutsu docs</title>
+        <title>Conflicts - Jujutsu docs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#revset-evaluation" class="md-skip">
+        <a href="#first-class-conflicts" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Jujutsu docs" class="md-header__button md-logo" aria-label="Jujutsu docs" data-md-component="logo">
+    <a href=".." title="Jujutsu docs" class="md-header__button md-logo" aria-label="Jujutsu docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Revset evaluation
+              Conflicts
             
           </span>
         </div>
@@ -240,7 +240,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Jujutsu docs" class="md-nav__button md-logo" aria-label="Jujutsu docs" data-md-component="logo">
+    <a href=".." title="Jujutsu docs" class="md-nav__button md-logo" aria-label="Jujutsu docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -270,7 +270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -330,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../install-and-setup/" class="md-nav__link">
+      <a href="../install-and-setup/" class="md-nav__link">
         
   
   
@@ -353,7 +353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorial/" class="md-nav__link">
+      <a href="../tutorial/" class="md-nav__link">
         
   
   
@@ -376,7 +376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gerrit/" class="md-nav__link">
+      <a href="../gerrit/" class="md-nav__link">
         
   
   
@@ -399,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../github/" class="md-nav__link">
+      <a href="../github/" class="md-nav__link">
         
   
   
@@ -422,7 +422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../windows/" class="md-nav__link">
+      <a href="../windows/" class="md-nav__link">
         
   
   
@@ -452,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../FAQ/" class="md-nav__link">
+      <a href="../FAQ/" class="md-nav__link">
         
   
   
@@ -474,7 +474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cli-reference/" class="md-nav__link">
+      <a href="../cli-reference/" class="md-nav__link">
         
   
   
@@ -496,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../testimonials/" class="md-nav__link">
+      <a href="../testimonials/" class="md-nav__link">
         
   
   
@@ -518,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../community_tools/" class="md-nav__link">
+      <a href="../community_tools/" class="md-nav__link">
         
   
   
@@ -537,18 +537,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -564,7 +566,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Concepts
@@ -578,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../working-copy/" class="md-nav__link">
+      <a href="../working-copy/" class="md-nav__link">
         
   
   
@@ -601,7 +603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bookmarks/" class="md-nav__link">
+      <a href="../bookmarks/" class="md-nav__link">
         
   
   
@@ -621,10 +623,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../conflicts/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Conflicts
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -635,6 +659,80 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advantages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conflict-markers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conflict markers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternative-conflict-marker-styles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alternative conflict marker styles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#long-conflict-markers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Long conflict markers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conflicts-with-missing-terminating-newline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conflicts with missing terminating newline
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -647,7 +745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operation-log/" class="md-nav__link">
+      <a href="../operation-log/" class="md-nav__link">
         
   
   
@@ -670,7 +768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../glossary/" class="md-nav__link">
+      <a href="../glossary/" class="md-nav__link">
         
   
   
@@ -738,7 +836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/cli-revision-options/" class="md-nav__link">
+      <a href="../guides/cli-revision-options/" class="md-nav__link">
         
   
   
@@ -761,7 +859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/divergence/" class="md-nav__link">
+      <a href="../guides/divergence/" class="md-nav__link">
         
   
   
@@ -784,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/multiple-remotes/" class="md-nav__link">
+      <a href="../guides/multiple-remotes/" class="md-nav__link">
         
   
   
@@ -852,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../config/" class="md-nav__link">
+      <a href="../config/" class="md-nav__link">
         
   
   
@@ -875,7 +973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../filesets/" class="md-nav__link">
+      <a href="../filesets/" class="md-nav__link">
         
   
   
@@ -898,7 +996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../revsets/" class="md-nav__link">
+      <a href="../revsets/" class="md-nav__link">
         
   
   
@@ -921,7 +1019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../templates/" class="md-nav__link">
+      <a href="../templates/" class="md-nav__link">
         
   
   
@@ -989,7 +1087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../git-comparison/" class="md-nav__link">
+      <a href="../git-comparison/" class="md-nav__link">
         
   
   
@@ -1012,7 +1110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../git-command-table/" class="md-nav__link">
+      <a href="../git-command-table/" class="md-nav__link">
         
   
   
@@ -1035,7 +1133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../git-compatibility/" class="md-nav__link">
+      <a href="../git-compatibility/" class="md-nav__link">
         
   
   
@@ -1058,7 +1156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../git-experts/" class="md-nav__link">
+      <a href="../git-experts/" class="md-nav__link">
         
   
   
@@ -1081,7 +1179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sapling-comparison/" class="md-nav__link">
+      <a href="../sapling-comparison/" class="md-nav__link">
         
   
   
@@ -1104,7 +1202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../related-work/" class="md-nav__link">
+      <a href="../related-work/" class="md-nav__link">
         
   
   
@@ -1131,20 +1229,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
           <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
@@ -1160,7 +1256,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             Technical details
@@ -1174,7 +1270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../core_tenets/" class="md-nav__link">
+      <a href="../core_tenets/" class="md-nav__link">
         
   
   
@@ -1197,7 +1293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../architecture/" class="md-nav__link">
+      <a href="../technical/architecture/" class="md-nav__link">
         
   
   
@@ -1220,7 +1316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../concurrency/" class="md-nav__link">
+      <a href="../technical/concurrency/" class="md-nav__link">
         
   
   
@@ -1243,7 +1339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../conflicts/" class="md-nav__link">
+      <a href="../technical/conflicts/" class="md-nav__link">
         
   
   
@@ -1254,221 +1350,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Revset evaluation
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Revset evaluation
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#parsing-and-alias-expansion" class="md-nav__link">
-    <span class="md-ellipsis">
-      Parsing and Alias Expansion
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#symbol-resolution" class="md-nav__link">
-    <span class="md-ellipsis">
-      Symbol Resolution
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#optimization" class="md-nav__link">
-    <span class="md-ellipsis">
-      Optimization
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Optimization">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-resolve-referenced-commits" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Resolve referenced commits
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-unfold-ranges-and-differences" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Unfold ranges and differences
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-fold-redundant-expressions" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Fold redundant expressions
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-fold-generations" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Fold generations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-flatten-intersections" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Flatten intersections
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-sort-negations-and-ancestors" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Sort negations and ancestors
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#7-fold-ancestors-union" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Fold ancestors union
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#8-internalize-filters" class="md-nav__link">
-    <span class="md-ellipsis">
-      8. Internalize filters
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#9-fold-heads-range" class="md-nav__link">
-    <span class="md-ellipsis">
-      9. Fold heads range
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#10-fold-ranges-and-differences" class="md-nav__link">
-    <span class="md-ellipsis">
-      10. Fold ranges and differences
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#11-fold-negated-ancestors" class="md-nav__link">
-    <span class="md-ellipsis">
-      11. Fold negated ancestors
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visibility-resolution" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visibility Resolution
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#evaluation-by-index" class="md-nav__link">
-    <span class="md-ellipsis">
-      Evaluation by Index
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1526,7 +1407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../contributing/" class="md-nav__link">
+      <a href="../contributing/" class="md-nav__link">
         
   
   
@@ -1549,7 +1430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../code-of-conduct/" class="md-nav__link">
+      <a href="../code-of-conduct/" class="md-nav__link">
         
   
   
@@ -1572,7 +1453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../style_guide/" class="md-nav__link">
+      <a href="../style_guide/" class="md-nav__link">
         
   
   
@@ -1595,7 +1476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design_docs/" class="md-nav__link">
+      <a href="../design_docs/" class="md-nav__link">
         
   
   
@@ -1618,7 +1499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design_doc_blueprint/" class="md-nav__link">
+      <a href="../design_doc_blueprint/" class="md-nav__link">
         
   
   
@@ -1641,7 +1522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releasing/" class="md-nav__link">
+      <a href="../releasing/" class="md-nav__link">
         
   
   
@@ -1664,7 +1545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/temporary-voting/" class="md-nav__link">
+      <a href="../governance/temporary-voting/" class="md-nav__link">
         
   
   
@@ -1687,7 +1568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../governance/GOVERNANCE/" class="md-nav__link">
+      <a href="../governance/GOVERNANCE/" class="md-nav__link">
         
   
   
@@ -1755,7 +1636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/git-submodules/" class="md-nav__link">
+      <a href="../design/git-submodules/" class="md-nav__link">
         
   
   
@@ -1778,7 +1659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/git-submodule-storage/" class="md-nav__link">
+      <a href="../design/git-submodule-storage/" class="md-nav__link">
         
   
   
@@ -1801,7 +1682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/run/" class="md-nav__link">
+      <a href="../design/run/" class="md-nav__link">
         
   
   
@@ -1824,7 +1705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/sparse-v2/" class="md-nav__link">
+      <a href="../design/sparse-v2/" class="md-nav__link">
         
   
   
@@ -1847,7 +1728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/tracking-branches/" class="md-nav__link">
+      <a href="../design/tracking-branches/" class="md-nav__link">
         
   
   
@@ -1870,7 +1751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/copy-tracking/" class="md-nav__link">
+      <a href="../design/copy-tracking/" class="md-nav__link">
         
   
   
@@ -1893,7 +1774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/secure-config/" class="md-nav__link">
+      <a href="../design/secure-config/" class="md-nav__link">
         
   
   
@@ -1916,7 +1797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/managed-config/" class="md-nav__link">
+      <a href="../design/managed-config/" class="md-nav__link">
         
   
   
@@ -1939,7 +1820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../design/jj-converge-command/" class="md-nav__link">
+      <a href="../design/jj-converge-command/" class="md-nav__link">
         
   
   
@@ -1969,7 +1850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../roadmap/" class="md-nav__link">
+      <a href="../roadmap/" class="md-nav__link">
         
   
   
@@ -1991,7 +1872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../changelog/" class="md-nav__link">
+      <a href="../changelog/" class="md-nav__link">
         
   
   
@@ -2033,150 +1914,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#parsing-and-alias-expansion" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      Parsing and Alias Expansion
+      Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#symbol-resolution" class="md-nav__link">
+  <a href="#advantages" class="md-nav__link">
     <span class="md-ellipsis">
-      Symbol Resolution
+      Advantages
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#optimization" class="md-nav__link">
+  <a href="#conflict-markers" class="md-nav__link">
     <span class="md-ellipsis">
-      Optimization
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Optimization">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-resolve-referenced-commits" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Resolve referenced commits
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-unfold-ranges-and-differences" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Unfold ranges and differences
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-fold-redundant-expressions" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Fold redundant expressions
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-fold-generations" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Fold generations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-flatten-intersections" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Flatten intersections
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-sort-negations-and-ancestors" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Sort negations and ancestors
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#7-fold-ancestors-union" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Fold ancestors union
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#8-internalize-filters" class="md-nav__link">
-    <span class="md-ellipsis">
-      8. Internalize filters
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#9-fold-heads-range" class="md-nav__link">
-    <span class="md-ellipsis">
-      9. Fold heads range
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#10-fold-ranges-and-differences" class="md-nav__link">
-    <span class="md-ellipsis">
-      10. Fold ranges and differences
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#11-fold-negated-ancestors" class="md-nav__link">
-    <span class="md-ellipsis">
-      11. Fold negated ancestors
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visibility-resolution" class="md-nav__link">
-    <span class="md-ellipsis">
-      Visibility Resolution
+      Conflict markers
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#evaluation-by-index" class="md-nav__link">
+  <a href="#alternative-conflict-marker-styles" class="md-nav__link">
     <span class="md-ellipsis">
-      Evaluation by Index
+      Alternative conflict marker styles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#long-conflict-markers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Long conflict markers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conflicts-with-missing-terminating-newline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conflicts with missing terminating newline
     </span>
   </a>
   
@@ -2198,7 +1983,7 @@
 
 
   
-    <a href="https://github.com/jj-vcs/jj/edit/main/docs/technical/revset-evaluation.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/jj-vcs/jj/edit/main/docs/conflicts.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2206,308 +1991,191 @@
   
 
 
-<h1 id="revset-evaluation">Revset Evaluation<a class="headerlink" href="#revset-evaluation" title="Permanent link">&para;</a></h1>
-<p>Whenever a revset is evaluated, it must pass through several stages. These
-stages gradually transform the revset to a lower level representation that can
-be efficiently evaluated.</p>
-<p><em>Note: We often use a pseudo-revset syntax to make this documentation easier to
-follow. For instance, some operations described in this document are only used
-internally and aren't available in the revset language exposed to users.</em></p>
-<h2 id="parsing-and-alias-expansion">Parsing and Alias Expansion<a class="headerlink" href="#parsing-and-alias-expansion" title="Permanent link">&para;</a></h2>
-<p>As a revset is parsed, any uses of revset aliases are substituted with their
-definitions. For instance, given the following aliases:</p>
-<div class="highlight"><pre><span></span><code><span class="k">[revset-aliases]</span>
-<span class="s2">&quot;trunk()&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;main@origin&quot;</span>
-<span class="s2">&quot;f(x, n)&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;x | ancestors(x.., n)&quot;</span>
+<h1 id="first-class-conflicts">First-class conflicts<a class="headerlink" href="#first-class-conflicts" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Conflicts happen when Jujutsu can't figure out how to merge different changes
+made to the same file. For instance, this can happen if two people are working
+on the same file and make different changes to the same part of the file, and
+then their commits are merged together with <code>jj new</code> (or one is rebased onto the
+other with <code>jj rebase</code>).</p>
+<p>Unlike most other VCSs, Jujutsu can record conflicted states in commits. For
+example, if you rebase a commit and it results in a conflict, the conflict will
+be recorded in the rebased commit and the rebase operation will succeed. You can
+then resolve the conflict whenever you want. Conflicted states can be further
+rebased, merged, or backed out. Note that what's stored in the commit is a
+logical representation of the conflict, not conflict <em>markers</em>; rebasing a
+conflict doesn't result in a nested conflict markers (see
+<a href="../technical/conflicts/">technical doc</a> for how this works).</p>
+<h2 id="advantages">Advantages<a class="headerlink" href="#advantages" title="Permanent link">&para;</a></h2>
+<p>The deeper understanding of conflicts has many advantages:</p>
+<ul>
+<li>Removes the need for things like
+  <code>git rebase/merge/cherry-pick/etc --continue</code>. Instead, you get a single
+  workflow for resolving conflicts: check out the conflicted commit, resolve
+  conflicts, and amend.</li>
+<li>Enables the "auto-rebase" feature, where descendants of rewritten commits
+  automatically get rewritten. This feature mostly replaces Mercurial's
+  <a href="https://www.mercurial-scm.org/wiki/ChangesetEvolution">Changeset Evolution</a>.</li>
+<li>Lets us define the change in a merge commit as being compared to the merged
+  parents. That way, we can rebase merge commits correctly (unlike both Git and
+  Mercurial). That includes conflict resolutions done in the merge commit,
+  addressing a common use case for
+  <a href="https://git-scm.com/docs/git-rerere">git rerere</a>.
+  Since the changes in a merge commit are displayed and rebased as expected,
+  <a href="https://git-scm.com/docs/gitglossary/2.22.0#Documentation/gitglossary.txt-aiddefevilmergeaevilmerge">evil merges</a>
+  are arguably not as evil anymore.</li>
+<li>Allows you to postpone conflict resolution until you're ready for it. You
+  can easily keep all your work-in-progress commits rebased onto upstream's head
+  if you like.</li>
+<li><a href="https://stackoverflow.com/questions/26370185/how-do-criss-cross-merges-arise-in-git">Criss-cross merges</a>
+  and <a href="https://git-scm.com/docs/git-merge#Documentation/git-merge.txt-octopus">octopus merges</a>
+  become trivial (implementation-wise); some cases that Git can't currently
+  handle, or that would result in nested conflict markers, can be automatically
+  resolved.</li>
+<li>Enables collaborative conflict resolution. (This assumes that you can share
+  the conflicts with others, which you probably shouldn't do if some people
+  interact with your project using Git.)</li>
+</ul>
+<p>For information about how conflicts are handled in the working copy, see
+<a href="../working-copy/#conflicts">here</a>.</p>
+<h2 id="conflict-markers">Conflict markers<a class="headerlink" href="#conflict-markers" title="Permanent link">&para;</a></h2>
+<p>Conflicts are "materialized" using <em>conflict markers</em> in various contexts. For
+example, when you run <code>jj new</code> or <code>jj edit</code> on a commit with a conflict, it will
+be materialized in the working copy. Conflicts are also materialized when they
+are part of diff output (e.g. <code>jj show</code> on a commit that introduces or resolves
+a conflict).</p>
+<p>As an example, imagine that you have a file which contains the following text,
+all in lowercase:</p>
+<div class="highlight"><pre><span></span><code>apple
+grape
+orange
 </code></pre></div>
-<p>Revsets are expanded as follows:</p>
-<ul>
-<li><code>trunk()</code> expands to <code>main@origin</code></li>
-<li><code>f(trunk(), 2)</code> expands to <code>main@origin | ancestors(main@origin.., 2)</code></li>
-<li><code>f(main | tags(), 2)</code> expands to <code>(main | tags()) | ancestors((main | tags()).., 2)</code></li>
-</ul>
-<p>Notably, revset expansion works similarly to macro expansion in other languages;
-if a revset alias uses a parameter twice, then the entire argument is
-substituted into the result twice. This can lead to inefficient evaluations if
-an argument is expensive to evaluate.</p>
-<h2 id="symbol-resolution">Symbol Resolution<a class="headerlink" href="#symbol-resolution" title="Permanent link">&para;</a></h2>
-<p>Revsets are eventually evaluated by the <code>Index</code> implementation, but the <code>Index</code>
-only stores information about commits and change IDs; it doesn't know about the
-current state of the <code>Repo</code>. Therefore, any revsets relying on state from the
-<code>Repo</code> must be resolved early.</p>
-<p>Some examples include:</p>
-<ul>
-<li>Working copies (e.g. <code>@</code>, <code>workspace@</code>)</li>
-<li>Commit ID prefixes (e.g. <code>123</code>)</li>
-<li>Change ID prefixes (e.g. <code>xyz</code>, <code>xyz/1</code>)</li>
-<li>Bookmark/tag names (e.g. <code>v1.0.0</code>, <code>main@origin</code>)</li>
-<li><code>bookmarks()</code>/<code>tags()</code></li>
-<li><code>remote_bookmarks()</code>/<code>remote_tags()</code></li>
-</ul>
-<p>If any of these revsets fail to resolve, a symbol resolution error will be
-emitted immediately. <code>present()</code> can be used to suppress these errors in cases
-where it is expected that a symbol might not exist (e.g. when <code>main</code> doesn't
-exist, <code>present(main)</code> will return <code>none()</code> instead of failing).</p>
-<p>This stage also handles <code>at_operation()</code>, and it also inserts <code>WithinVisibility</code>
-nodes to keep track of the commit IDs in <code>visible_heads()</code>.</p>
-<p>Symbol resolution substitutes these revset functions with a list of commit IDs,
-meaning the <code>Index</code> doesn't need to handle these functions while evaluating a
-revset. It is also possible to extend <code>jj</code> with custom symbol resolvers which
-are also handled by the symbol resolution stage.</p>
-<p><em>Note: Although the <code>Index</code> does store information about commit ID prefixes
-and change ID prefixes, we still need to resolve these symbols during this
-stage because resolving unique prefixes also requires information about
-visible commits and the <code>revsets.short-prefixes</code> setting.</em></p>
-<h2 id="optimization">Optimization<a class="headerlink" href="#optimization" title="Permanent link">&para;</a></h2>
-<p>Revset optimization consists of a series of passes that recursively rewrite
-revset expressions. The ordering of these passes is important, since one pass
-may enable further optimizations in a later pass. These are the current passes:</p>
-<ol>
-<li>Resolve referenced commits</li>
-<li>Unfold ranges and differences</li>
-<li>Fold redundant expressions</li>
-<li>Fold generations</li>
-<li>Flatten intersections</li>
-<li>Sort negations and ancestors</li>
-<li>Fold ancestors union</li>
-<li>Internalize filters</li>
-<li>Fold heads range</li>
-<li>Fold ranges and differences</li>
-<li>Fold negated ancestors</li>
-</ol>
-<h3 id="1-resolve-referenced-commits">1. Resolve referenced commits<a class="headerlink" href="#1-resolve-referenced-commits" title="Permanent link">&para;</a></h3>
-<p>This pass finds all referenced commit IDs and inserts <code>WithinReference</code> nodes to
-keep track of referenced commit IDs. This information will be used when lowering
-revsets to backend expressions later, since <code>all()</code> must also include all
-ancestors of commits referenced in the revset in addition to ancestors of
-<code>visible_heads()</code>. This pass comes first because later passes may remove
-redundant expressions.</p>
-<h3 id="2-unfold-ranges-and-differences">2. Unfold ranges and differences<a class="headerlink" href="#2-unfold-ranges-and-differences" title="Permanent link">&para;</a></h3>
-<p>This pass unfolds range (<code>x..y</code>) and difference (<code>x ~ y</code>) operations into
-intersections. This enables further optimizations in later passes.</p>
-<p>Rules:</p>
-<ul>
-<li><code>x..y</code> =&gt; <code>::y &amp; ~(::x)</code></li>
-<li><code>x ~ y</code> =&gt; <code>x &amp; ~y</code></li>
-</ul>
-<p><em>Note: During parsing, <code>x..</code> is already converted to <code>~::x</code>, <code>..x</code> is converted
-to <code>root()..x</code>, and <code>..</code> is converted to <code>~root()</code>.</em></p>
-<h3 id="3-fold-redundant-expressions">3. Fold redundant expressions<a class="headerlink" href="#3-fold-redundant-expressions" title="Permanent link">&para;</a></h3>
-<p>This pass optimizes intersections and unions with <code>all()</code> and <code>none()</code>, as well
-as negations.</p>
-<p>Rules:</p>
-<ul>
-<li><code>~(~x)</code> =&gt; <code>x</code></li>
-<li><code>~none()</code> =&gt; <code>all()</code></li>
-<li><code>~all()</code> =&gt; <code>none()</code></li>
-<li><code>none() | x</code> =&gt; <code>x</code></li>
-<li><code>x | none()</code> =&gt; <code>x</code></li>
-<li><code>all() | x</code> =&gt; <code>all()</code></li>
-<li><code>x | all()</code> =&gt; <code>all()</code></li>
-<li><code>none() &amp; x</code> =&gt; <code>none()</code></li>
-<li><code>x &amp; none()</code> =&gt; <code>none()</code></li>
-<li><code>all() &amp; x</code> =&gt; <code>x</code></li>
-<li><code>x &amp; all()</code> =&gt; <code>x</code></li>
-</ul>
-<h3 id="4-fold-generations">4. Fold generations<a class="headerlink" href="#4-fold-generations" title="Permanent link">&para;</a></h3>
-<p>The internal representation of ancestors/parents/descendants/children revsets is
-slightly different from the normal revset syntax. There are two basic
-operations:</p>
-<ul>
-<li><code>ancestors(heads, generation)</code></li>
-<li><code>descendants(roots, generation)</code></li>
-</ul>
-<p>In this representation, <code>generation</code> is an exclusive range that specifies how
-far to walk backwards/forwards from the <code>heads</code>/<code>roots</code> (unlike the standard
-revset syntax, where <code>generation</code> is a single number).</p>
-<p>For example, this is how the following revsets are represented internally:</p>
-<ul>
-<li><code>ancestors(x)</code> =&gt; <code>ancestors(x, 0..MAX)</code></li>
-<li><code>ancestors(x, n)</code> =&gt; <code>ancestors(x, 0..n)</code></li>
-<li><code>parents(x)</code> =&gt; <code>ancestors(x, 1..2)</code></li>
-<li><code>parents(x, n)</code> =&gt; <code>ancestors(x, n..n+1)</code></li>
-<li><code>descendants(x)</code> =&gt; <code>descendants(x, 0..MAX)</code></li>
-<li><code>descendants(x, n)</code> =&gt; <code>descendants(x, 0..n)</code></li>
-<li><code>children(x)</code> =&gt; <code>descendants(x, 1..2)</code></li>
-<li><code>children(x, n)</code> =&gt; <code>descendants(x, n..n+1)</code></li>
-</ul>
-<p>This optimization pass folds nested <code>ancestors()</code>/<code>descendants()</code> operations
-into a single operation using the following rules:</p>
-<ul>
-<li><code>ancestors(ancestors(x, a..b), c..d)</code> =&gt; <code>ancestors(x, (a..b) + (c..d))</code></li>
-<li><code>descendants(descendants(x, a..b), c..d)</code> =&gt; `descendants(x, (a..b) + (c..d))</li>
-</ul>
-<p>Where the addition of non-empty ranges <code>a..b</code> and <code>c..d</code> is defined as
-<code>(a + c)..(b + d - 1)</code>.</p>
-<p>Therefore, this pass allows these types of optimizations:</p>
-<ul>
-<li><code>x--</code> =&gt; <code>ancestors(x, 2..3)</code></li>
-<li><code>::(x-)</code> =&gt; <code>ancestors(x, 1..MAX)</code></li>
-<li><code>(::x)-</code> =&gt; <code>ancestors(x, 1..MAX)</code></li>
-<li><code>ancestors(x---, 5)</code> =&gt; <code>ancestors(x, 3..8)</code></li>
-</ul>
-<p>There is also some additional logic for handling <code>first_parent()</code> and
-<code>first_ancestors()</code> correctly.</p>
-<h3 id="5-flatten-intersections">5. Flatten intersections<a class="headerlink" href="#5-flatten-intersections" title="Permanent link">&para;</a></h3>
-<p>This pass flattens intersections to be left-associtive. This makes later
-optimizations easier to implement. For example:</p>
-<ul>
-<li><code>x &amp; (y &amp; z)</code> =&gt; <code>(x &amp; y) &amp; z</code></li>
-<li><code>(w &amp; (x &amp; y)) &amp; z</code> =&gt; <code>((w &amp; x) &amp; y) &amp; z</code></li>
-</ul>
-<h3 id="6-sort-negations-and-ancestors">6. Sort negations and ancestors<a class="headerlink" href="#6-sort-negations-and-ancestors" title="Permanent link">&para;</a></h3>
-<p>This pass sorts the elements in an intersection based on 4 categories:</p>
-<ol>
-<li>Negated ancestors (<code>~ancestors(x, n..MAX)</code>)</li>
-<li>Ancestors (<code>ancestors(x, n..MAX)</code>)</li>
-<li>Other non-negated expressions</li>
-<li>Other negated expressions (<code>~x</code>)</li>
-</ol>
-<p>Negated ancestors are moved to the left to enable the "fold ancestors union"
-pass. Placing the ancestors next to the negated ancestors next allows them to be
-folded into a range easily in a later pass, and putting other negated
-expressions at the end allows them to be folded into a difference easily in a
-later pass as well.</p>
-<p>Examples:</p>
-<ul>
-<li><code>~w &amp; x &amp; ~::y &amp; ::z</code> =&gt; <code>~::y &amp; ::z &amp; x &amp; ~w</code></li>
-<li><code>::w &amp; ~::x &amp; ::y &amp; ~::z</code> =&gt; <code>~::x &amp; ~::z &amp; ::w &amp; ::y</code></li>
-</ul>
-<h3 id="7-fold-ancestors-union">7. Fold ancestors union<a class="headerlink" href="#7-fold-ancestors-union" title="Permanent link">&para;</a></h3>
-<p>This pass folds unions of ancestors into ancestors of unions. The main purpose
-of this optimization is to allow combining intersections of ranges into a single
-range in later passes (e.g. <code>a..b &amp; c..</code> can be optimized to <code>(a | c)..b</code>).</p>
-<p>Rules:</p>
-<ul>
-<li><code>::x | ::y</code> =&gt; <code>::(x | y)</code></li>
-<li><code>~::x &amp; ~::y</code> =&gt; <code>~::(x | y)</code></li>
-</ul>
-<h3 id="8-internalize-filters">8. Internalize filters<a class="headerlink" href="#8-internalize-filters" title="Permanent link">&para;</a></h3>
-<p>Some revsets are implemented as filters. This means that the <code>Index</code> can't
-directly query for these revsets. Instead, it must check the filter against each
-commit individually to test whether it matches.</p>
-<p>Examples of filter revsets:</p>
-<ul>
-<li><code>merges()</code></li>
-<li><code>empty()</code>/<code>files()</code></li>
-<li><code>description()</code>/<code>subject()</code></li>
-<li><code>mine()</code>/<code>author_*()</code>/<code>committer_*()</code></li>
-<li><code>diff_lines()</code></li>
-<li><code>conflicts()</code></li>
-<li><code>signed()</code></li>
-<li><code>divergent()</code></li>
-</ul>
-<p>For instance, to evaluate <code>x..y &amp; conflicts()</code>, the <code>Index</code> implementation first
-evaluates <code>x..y</code>, then it checks every commit in that range to see whether it
-has a conflict or not. If there is no base set of commits, the <code>Index</code>
-implementation will instead have to check the filter against every commit in
-<code>all()</code>, which can be expensive on large repos.</p>
-<p>The purpose of this optimization pass is to group all filters together at the
-end of an intersection, meaning that all non-filter expressions can be
-intersected before checking the filter. This reduces the amount of commits that
-need to be checked.</p>
-<p>Rules:</p>
-<ul>
-<li><code>~filter(x)</code> =&gt; <code>filter(~x)</code></li>
-<li><code>filter(x) | filter(y) =&gt; filter(x | y)</code></li>
-<li><code>filter(x) | y</code> =&gt; <code>filter(x | y)</code></li>
-<li><code>x | filter(y)</code> =&gt; <code>filter(x | y)</code></li>
-<li><code>filter(x) &amp; filter(y) =&gt; filter(x &amp; y)</code></li>
-<li><code>filter(x) &amp; y</code> =&gt; <code>y &amp; filter(x)</code></li>
-<li><code>(x &amp; filter(y)) &amp; filter(z)</code> =&gt; <code>x &amp; filter(y &amp; z)</code></li>
-<li><code>(x &amp; filter(y)) &amp; z</code> =&gt; <code>(x &amp; z) &amp; filter(y)</code></li>
-</ul>
-<p>Examples:</p>
-<ul>
-<li><code>(::y | empty()) &amp; ::x</code> =&gt; <code>::x &amp; filter(::y | empty())</code></li>
-<li><code>conflicts() &amp; ::x &amp; empty()</code> =&gt; <code>::x &amp; filter(conflicts() &amp; empty())</code></li>
-</ul>
-<h3 id="9-fold-heads-range">9. Fold heads range<a class="headerlink" href="#9-fold-heads-range" title="Permanent link">&para;</a></h3>
-<p>Often, <code>heads()</code> is used to find the most recent commit satisfying some
-property. For instance, <code>heads(::@ ~ empty())</code> can be used to find the most
-recent non-empty ancestors of <code>@</code>. If we were to naively evaluate this revset,
-we would first have to find every non-empty commit which is an ancestor of <code>@</code>,
-and then take the <code>heads()</code> of that set. This would be very slow, since
-<code>empty()</code> is an expensive filter to check.</p>
-<p>This pass converts <code>heads()</code> on a filtered range of commits into a special
-<code>heads_range(roots, heads, [filter])</code> operation which can be evaluated more
-efficiently because it is able to stop scanning ancestor commits whenever a head
-is found.</p>
-<p>Examples:</p>
-<ul>
-<li><code>heads(x..y)</code> =&gt; <code>heads_range(x, y)</code></li>
-<li><code>heads(x..y &amp; conflicts())</code> =&gt; <code>heads_range(x, y, conflicts())</code></li>
-<li><code>heads(::x)</code> =&gt; <code>heads_range(none(), x)</code></li>
-<li><code>heads(~::x)</code> =&gt; <code>heads_range(x, visible_heads_or_referenced())</code></li>
-<li><code>heads(filter(x))</code> =&gt; <code>heads_range(none(), visible_heads_or_referenced(), x)</code></li>
-</ul>
-<p><em>Note: When there's no obvious <code>heads</code> for the filtered range, we can use
-<code>visible_heads_or_referenced()</code> instead, which represents a union of
-<code>visible_heads()</code> and all explicitly referenced commits in the revset
-expression. Since revsets can only return visible commits and ancestors of
-explicitly referenced commits, if we start at <code>visible_heads_or_referenced()</code>
-and walk backwards through the commit graph, we will eventually see every commit
-which could possibly be returned (and as we'll see later, this is actually how
-the <code>all()</code> revset is evaluated).</em></p>
-<p>Since <code>::x</code> is equivalent to <code>::heads(x)</code>, this pass also inserts
-<code>heads_range()</code> operations inside of <code>ancestors()</code> when possible:</p>
-<ul>
-<li><code>::(x..y)</code> =&gt; <code>::heads_range(x, y)</code></li>
-<li><code>::(~mine())</code> =&gt; <code>::heads_range(none(), visible_heads_or_referenced(), ~mine())</code></li>
-</ul>
-<h3 id="10-fold-ranges-and-differences">10. Fold ranges and differences<a class="headerlink" href="#10-fold-ranges-and-differences" title="Permanent link">&para;</a></h3>
-<p>This pass eliminates negated expressions by folding them into ranges and
-differences when possible. Negated expressions like <code>~x</code> are expensive to
-evaluate because they will be converted into <code>all() ~ x</code>, meaning they require
-iterating over every commit in the repo. Therefore, we want to eliminate as many
-negations as possible.</p>
-<p>Rules:</p>
-<ul>
-<li><code>::x &amp; ~::y</code> =&gt; <code>y..x</code></li>
-<li><code>~::x &amp; ::y</code> =&gt; <code>x..y</code></li>
-<li><code>x &amp; ~y</code> =&gt; <code>x ~ y</code></li>
-<li><code>~x &amp; y</code> =&gt; <code>y ~ x</code> (if <code>y</code> isn't a filter)</li>
-</ul>
-<h3 id="11-fold-negated-ancestors">11. Fold negated ancestors<a class="headerlink" href="#11-fold-negated-ancestors" title="Permanent link">&para;</a></h3>
-<p>This pass eliminates any remaining negated ancestors expressions by converting
-them to ranges. The heads of the range are all visible heads and all referenced
-commits in the revset.</p>
-<p>Rules:</p>
-<ul>
-<li><code>~::x</code> =&gt; <code>x..visible_heads_or_referenced()</code></li>
-</ul>
-<h2 id="visibility-resolution">Visibility Resolution<a class="headerlink" href="#visibility-resolution" title="Permanent link">&para;</a></h2>
-<p>After optimization, the revset is lowered to a <code>ResolvedExpression</code> that the
-<code>Index</code> implementation can evaluate directly without being aware of commit
-visibility. The main differences between a revset expression and a
-<code>ResolvedExpression</code> are:</p>
-<ul>
-<li>
-<p><code>all()</code> is converted to <code>::visible_heads_or_referenced()</code>.</p>
-</li>
-<li>
-<p>Negated expressions like <code>~x</code> are converted to
-  <code>::visible_heads_or_referenced() ~ x</code>.</p>
-</li>
-<li>
-<p>Filters are represented by a separate <code>ResolvedPredicateExpression</code> type which
-  can only appear in certain contexts. For instance, there is a separate
-  <code>FilterWithin</code> operation to handle intersections with filters. Filters outside
-  of intersections are handled as <code>::visible_heads_or_referenced() &amp; filter(f)</code>.</p>
-</li>
-<li>
-<p>All visibility information is removed from the expression, so
-  <code>visible_heads()</code> and <code>visible_heads_or_referenced()</code> are replaced by lists of
-  commit IDs.</p>
-</li>
-</ul>
-<h2 id="evaluation-by-index">Evaluation by Index<a class="headerlink" href="#evaluation-by-index" title="Permanent link">&para;</a></h2>
-<p>Finally, the <code>ResolvedExpression</code> is passed to the <code>Index</code> implementation to be
-evaluated into a <code>Revset</code> value. There is a built-in default index
-implementation, but <code>jj</code> can be extended with alternative implementations.</p>
-<p>A <code>Revset</code> can then be converted into a lazy stream of commits in topological
-order (with children before parents) or into a function that tests whether a
-<code>CommitId</code> is included in the revset.</p>
+<p>One person replaces the word "grape" with "grapefruit" in commit A, while
+another person changes every line to uppercase in commit B. If you merge the
+changes together with <code>jj new A B</code>, the resulting commit will have a conflict
+since Jujutsu can't figure out how to combine these changes. Therefore, Jujutsu
+will materialize the conflict in the working copy using conflict markers, which
+would look like this:</p>
+<div class="highlight"><pre><span></span><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; conflict 1 of 1
+%%%%%%% diff from: vpxusssl 38d49363 &quot;merge base&quot;
+\\\\\\\        to: rtsqusxu 2768b0b9 &quot;commit A&quot;
+ apple
+-grape
++grapefruit
+ orange
++++++++ ysrnknol 7a20f389 &quot;commit B&quot;
+APPLE
+GRAPE
+ORANGE
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; conflict 1 of 1 ends
+</code></pre></div>
+<p>The markers <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> indicate the start and end of a conflict
+respectively. The marker <code>+++++++</code> indicates the start of a snapshot, while the
+marker <code>%%%%%%%</code> indicates the start of a diff to apply to the snapshot. The
+<code>\\\\\\\</code> marker just allows the label to be split across two lines to make it
+more readable.</p>
+<p>Therefore, to resolve this conflict, you would apply the diff (changing "grape"
+to "grapefruit") to the snapshot (the side with every line in uppercase),
+editing the file to look like this:</p>
+<div class="highlight"><pre><span></span><code>APPLE
+GRAPEFRUIT
+ORANGE
+</code></pre></div>
+<p>In practice, conflicts are usually 2-sided, meaning that there's only 2
+conflicting changes being merged together at a time, but Jujutsu supports
+conflicts with arbitrarily many sides, which can happen when merging 3 or more
+commits at once. In that case, you would see a single snapshot section and
+multiple diff sections.</p>
+<p>Compared to just showing the content of each side of the conflict, the main
+benefit of Jujutsu's style of conflict markers is that you don't need to spend
+time manually comparing the sides to spot the differences between them. This is
+especially beneficial for many-sided conflicts, since resolving them just
+requires applying each diff to the snapshot one-by-one.</p>
+<h2 id="alternative-conflict-marker-styles">Alternative conflict marker styles<a class="headerlink" href="#alternative-conflict-marker-styles" title="Permanent link">&para;</a></h2>
+<p>If you prefer to just see the contents of each side of the conflict without the
+diff, Jujutsu also supports a "snapshot" style, which can be enabled by setting
+the <code>ui.conflict-marker-style</code> config option to "snapshot":</p>
+<div class="highlight"><pre><span></span><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; conflict 1 of 1
++++++++ rtsqusxu 2768b0b9 &quot;commit A&quot;
+apple
+grapefruit
+orange
+------- vpxusssl 38d49363 &quot;merge base&quot;
+apple
+grape
+orange
++++++++ ysrnknol 7a20f389 &quot;commit B&quot;
+APPLE
+GRAPE
+ORANGE
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; conflict 1 of 1 ends
+</code></pre></div>
+<p>Some tools expect Git-style conflict markers, so Jujutsu also supports <a href="https://git-scm.com/docs/git-merge#_how_conflicts_are_presented">Git's
+"diff3" style</a>
+conflict markers by setting the <code>ui.conflict-marker-style</code> config option to
+"git":</p>
+<div class="highlight"><pre><span></span><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; rtsqusxu 2768b0b9 &quot;commit A&quot;
+apple
+grapefruit
+orange
+||||||| vpxusssl 38d49363 &quot;merge base&quot;
+apple
+grape
+orange
+=======
+APPLE
+GRAPE
+ORANGE
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; ysrnknol 7a20f389 &quot;commit B&quot;
+</code></pre></div>
+<p>This conflict marker style only supports 2-sided conflicts though, so it falls
+back to the similar "snapshot" conflict markers if there are more than 2 sides
+to the conflict.</p>
+<h2 id="long-conflict-markers">Long conflict markers<a class="headerlink" href="#long-conflict-markers" title="Permanent link">&para;</a></h2>
+<p>Some files may contain lines which could be confused for conflict markers. For
+instance, a line could start with <code>=======</code>, which looks like a Git-style
+conflict marker. To ensure that it's always unambiguous which lines are conflict
+markers and which are just part of the file contents, <code>jj</code> sometimes uses
+conflict markers which are longer than normal:</p>
+<div class="highlight"><pre><span></span><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; conflict 1 of 1
+%%%%%%%%%%%%%%% diff from: wqvuxsty cb9217d5 &quot;merge base&quot;
+\\\\\\\\\\\\\\\        to: kwntsput 0e15b770 &quot;commit A&quot;
+-Heading
++HEADING
+ =======
++++++++++++++++ mpnwrytz 52020ed6 &quot;commit B&quot;
+New Heading
+===========
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; conflict 1 of 1 ends
+</code></pre></div>
+<h2 id="conflicts-with-missing-terminating-newline">Conflicts with missing terminating newline<a class="headerlink" href="#conflicts-with-missing-terminating-newline" title="Permanent link">&para;</a></h2>
+<p>When materializing conflicts, <code>jj</code> outputs them in a line-based format, with
+each conflict marker line terminated by a newline character (<code>\n</code>). This format
+works well for text files that consist of a series of lines, with each line
+terminated by a newline character as well.</p>
+<p>While most text files follow this convention, some do not. Since conflict
+markers must appear on their own line, when <code>jj</code> encounters a missing
+terminating newline character in a conflict, it still needs to ensure that
+there is a newline before the next conflict marker. To do this, it adds an
+extra newline to each term of the conflict. Then, to compensate for this extra
+newline, it also omits the terminating newline from the "end of conflict"
+marker (<code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>).</p>
+<p>For instance, if a file originally contained <code>grape</code> with no terminating newline
+character, and one person changed <code>grape</code> to <code>grapefruit</code>, while another person
+added the missing newline character to make <code>grape\n</code>, the resulting conflict
+would look like this (<code>␊</code> demonstrates the <code>\n</code> character explicitly; note that
+the last line doesn't have the terminating <code>\n</code> character):</p>
+<div class="highlight"><pre><span></span><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; conflict 1 of 1␊
++++++++ tlwwkqxk d121763d &quot;commit A&quot; (no terminating newline)␊
+grapefruit␊
+%%%%%%% diff from: qwpqssno fe561d93 &quot;merge base&quot; (no terminating newline)␊
+\\\\\\\        to: poxkmrxy c735fe02 &quot;commit B&quot;␊
+ grape␊
++␊
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; conflict 1 of 1 ends
+</code></pre></div>
+<p>Therefore, a resolution of this conflict could be <code>grapefruit\n</code>, with the
+terminating newline character added.</p>
 
 
 
@@ -2558,10 +2226,10 @@ order (with children before parents) or into a function that tests whether a
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.code.copy", "content.tabs.link", "navigation.instant"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.action.edit", "content.code.copy", "content.tabs.link", "navigation.instant"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
